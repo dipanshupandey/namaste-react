@@ -1,0 +1,31 @@
+{
+  "name": "namastereact",
+  "version": "1.0.0",
+  "description": "namste react course followed by Dipanshu Pandey",
+ 
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dipanshupandey/namaste-react.git"
+  },
+  "author": "Dipanshu Pandey",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dipanshupandey/namaste-react/issues"
+  },
+  "homepage": "https://github.com/dipanshupandey/namaste-react#readme",
+  "devDependencies": {
+    "parcel": "^2.15.4"
+  },
+  "dependencies": {
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
+  },
+  "browserslist": [
+    "> 0.5%",
+    "last 2 versions",
+    "not dead"
+  ]
+}
