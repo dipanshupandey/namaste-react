@@ -4,7 +4,8 @@
   "description": "namste react course followed by Dipanshu Pandey",
  
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "start": "parcel index.html"
   },
   "repository": {
     "type": "git",

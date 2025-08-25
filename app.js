@@ -1,16 +1,16 @@
-{/* <div id="parent">
-    <div id="child">
-        <h1>gruss gott</h1>
-    </div>
-</div> */}
-
 import React from "react";
-import  ReactDOM  from "react-dom/client";
-const heading1=React.createElement("h1",{key:1},"gruss gott!!!");
-const heading2=React.createElement("h1",{key:2},"auffweidersehen");
-const child=React.createElement("div",{id:"child"},[heading1,heading2]);
-const parent=React.createElement("div",{id:"parent"},child);
+import ReactDOM from "react-dom/client";
 
-const root=ReactDOM.createRoot(document.getElementById("root"));
-console.log(parent);
-root.render(parent);
+const reactHeading = React.createElement("h1",
+                                         { id: "parent" },
+                                        "Namste React by REACT");
+
+
+
+const JSXHeading=<h1 id="parent">Namste React BY JSX</h1>;
+console.log(reactHeading);
+console.log(JSXHeading);
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+// root.render(reactHeading);
+root.render(JSXHeading);
