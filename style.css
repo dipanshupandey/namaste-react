@@ -1,3 +1,29 @@
-#parent{
-    color: blueviolet;
+body{
+    margin: 0;
+    padding: 0;
+}
+#nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: navajowhite;
+    height: 2rem;
+    padding: 1rem;
+
+}
+
+#logo {
+    float: left;
+    font-size: 1.5em;
+    text-decoration: none;
+    color: black;
+}
+#searchBar{
+    font-size: 1em;
+    height: 1.5rem;
+}
+
+#icon{
+    font-size: 1.7rem;
+    color: black;
 }

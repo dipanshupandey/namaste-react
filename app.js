@@ -1,22 +1,37 @@
+
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-// const Heading=()=>{
-//     return <h1>namaste react from functional component</h1>;
+const Logo=()=>
+    (
+        <a className="active" href="#home" id="logo">LOGO</a>
+    )
 
-// }
+const Search=()=>
+    (
+        <div >
+            <input id="searchBar" type="text" placeholder="Search.." />
+        </div>
+    )
 
-const Title=<h1> Gruss Gott Dipanshu </h1>;
 
-let number=1000;
-const Heading=()=> (
-<div>
-    <h1>{console.log(number)}</h1>
-    {Title}
-    <h1>namaste react from functional component</h1>
-    <h2>!!!!!</h2>
-</div>);
-// console.log(<h1>namaste react from functional component</h1>)
+const Icon=()=>
+    (
+        <div id="icon">
+           <i class="fa-solid fa-user"></i>
+            </div>
+    )
+
+const Header=()=>
+    (
+        <div id="nav">
+            
+            <Logo/>
+            <Search/>
+            <Icon/>
+        </div>
+    )
+
 const root=ReactDOM.createRoot(document.getElementById("root"));
-// root.render(reactHeading);
-root.render(<Heading/>);
+
+root.render(<Header/>);

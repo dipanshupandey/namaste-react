@@ -2,7 +2,6 @@
   "name": "namastereact",
   "version": "1.0.0",
   "description": "namste react course followed by Dipanshu Pandey",
- 
   "scripts": {
     "test": "jest",
     "start": "parcel index.html"
@@ -21,6 +20,11 @@
     "parcel": "^2.15.4"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^7.0.0",
+    "@fortawesome/free-brands-svg-icons": "^7.0.0",
+    "@fortawesome/free-regular-svg-icons": "^7.0.0",
+    "@fortawesome/free-solid-svg-icons": "^7.0.0",
+    "@fortawesome/react-fontawesome": "^3.0.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1"
   },
