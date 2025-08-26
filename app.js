@@ -1,16 +1,22 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-const reactHeading = React.createElement("h1",
-                                         { id: "parent" },
-                                        "Namste React by REACT");
+// const Heading=()=>{
+//     return <h1>namaste react from functional component</h1>;
 
+// }
 
+const Title=<h1> Gruss Gott Dipanshu </h1>;
 
-const JSXHeading=<h1 id="parent">Namste React BY JSX</h1>;
-console.log(reactHeading);
-console.log(JSXHeading);
-
-const root = ReactDOM.createRoot(document.getElementById("root"));
+let number=1000;
+const Heading=()=> (
+<div>
+    <h1>{console.log(number)}</h1>
+    {Title}
+    <h1>namaste react from functional component</h1>
+    <h2>!!!!!</h2>
+</div>);
+// console.log(<h1>namaste react from functional component</h1>)
+const root=ReactDOM.createRoot(document.getElementById("root"));
 // root.render(reactHeading);
-root.render(JSXHeading);
+root.render(<Heading/>);
