@@ -1,29 +1,26 @@
-body{
-    margin: 0;
+*{
     padding: 0;
+    margin: 0;
 }
-#nav{
+.nav{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: navajowhite;
-    height: 2rem;
-    padding: 1rem;
-
+    border: 1px solid black;
 }
 
-#logo {
-    float: left;
-    font-size: 1.5em;
-    text-decoration: none;
-    color: black;
-}
-#searchBar{
-    font-size: 1em;
-    height: 1.5rem;
+
+.logoIcon{
+    height: 100px;
 }
 
-#icon{
-    font-size: 1.7rem;
-    color: black;
+.navLinks{
+    display: flex;
+    gap: 10px;
+    list-style: none;
+    padding-right: 20px;
+  
+}
+.navLinks>li{
+    padding: 0 10px;
 }

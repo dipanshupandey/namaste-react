@@ -1,37 +1,36 @@
-
 import React from "react";
-import ReactDOM from "react-dom/client";
-
-const Logo=()=>
-    (
-        <a className="active" href="#home" id="logo">LOGO</a>
-    )
-
-const Search=()=>
-    (
-        <div >
-            <input id="searchBar" type="text" placeholder="Search.." />
-        </div>
-    )
+import  ReactDOM  from "react-dom/client";
+import logo2 from './logo.png'; 
 
 
-const Icon=()=>
-    (
-        <div id="icon">
-           <i class="fa-solid fa-user"></i>
+const Header=()=>{
+    return <div className="nav">
+            {console.log(logo2)}
+            <div className="logo-container">
+            <img src={logo2} alt="" />
+            <img className="logoIcon" src="https://i.pinimg.com/736x/44/95/10/449510635385ed24bbb47456c6d0ec9b.jpg" alt="Company Logo" />
             </div>
-    )
 
-const Header=()=>
-    (
-        <div id="nav">
-            
-            <Logo/>
-            <Search/>
-            <Icon/>
+            <div className="links">
+            <ul className="navLinks">
+                <li>HOME</li>
+                <li>ABOUT US</li>
+                <li>CONTACT</li>
+                <li>CART</li>
+                
+            </ul>
+            </div>
+    </div>
+}
+
+const App=()=>{
+    return (
+        <div className="app">
+            <Header/>
         </div>
     )
+}
+
 
 const root=ReactDOM.createRoot(document.getElementById("root"));
-
-root.render(<Header/>);
+root.render(<App/>);
