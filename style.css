@@ -24,3 +24,58 @@
 .navLinks>li{
     padding: 0 10px;
 }
+
+
+.card{
+    /* height: 250px; */
+    width: 200px;
+    border: 1px solid gray;
+    padding: 5px;
+    margin: 10px;
+}
+.card:hover{
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+.cardimage{
+   width: 100%;
+   height: 60%;
+   
+}
+
+.cardimage>img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    
+}
+
+.info{
+    margin: 10px;
+}
+.rating-time{
+    display: flex;
+   
+    gap: 10px;
+}
+
+.search{
+    margin: 10px;
+}
+
+.restrauntContainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+   
+    width: 90%;
+}
+
+.body{
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
