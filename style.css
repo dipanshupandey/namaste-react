@@ -166,3 +166,36 @@
     text-overflow: ellipsis;
   }
   
+
+  .filterButton {
+    background-color: #48c479;
+    
+    border: 1px solid #e0e0e0;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: white;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  }
+  
+  .filterButton:hover {
+    color: #222;
+    background-color: #f8f8f8;
+    border-color: #d0d0d0;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  }
+  
+  .filterButton:active {
+    transform: scale(0.95);
+  }
+  
+  .filterButton.active {
+    background-color: #ff5722; /* Food app orange */
+    color: white;
+    border-color: #ff5722;
+    box-shadow: 0 2px 8px rgba(255,87,34,0.4);
+  }
+  
