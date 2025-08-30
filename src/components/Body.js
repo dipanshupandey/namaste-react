@@ -1,5 +1,6 @@
 import Card from "./Card"
 import { useState,useEffect } from "react"
+import Shimmer from "./Shimmer";
 
 const Body=()=>{
     const [listOfRestraunt,setListOfRestaurants]=useState([]);
@@ -25,6 +26,11 @@ const Body=()=>{
       }, []); // empty dependency → runs only once on mount
       
 
+    
+      if(listOfRestraunt.length==0)
+      {
+        return <Shimmer/>
+      }
     return <>            
                 <div className="body" >
                 <div className="search restraunt" onChange={(e)=>
