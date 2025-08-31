@@ -290,4 +290,27 @@
   .searchButton:active {
     transform: scale(0.95);      /* pressed effect */
   }
+
+  
+  .loginButton {
+    background-color: #f97316; /* orange-500 */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+    transition: all 0.3s ease;
+  }
+  
+  .loginButton:hover {
+    background-color: #ea580c; /* darker orange */
+    transform: scale(1.05); /* slight zoom */
+  }
+  
+  .loginButton:active {
+    transform: scale(0.95); /* press effect */
+  }
   
