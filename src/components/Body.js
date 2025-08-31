@@ -3,8 +3,10 @@ import { useState,useEffect } from "react"
 import Shimmer from "./Shimmer";
 
 const Body=()=>{
+    
     const [listOfRestraunt,setListOfRestaurants]=useState([]);
     const [searchText,setSearchText]=useState("");
+    const [allRestaurants, setAllRestaurants] = useState([]);//master list so the data doest gets lost
     
 
     useEffect(() => {
@@ -16,7 +18,7 @@ const Body=()=>{
             let data = await response.json();
             data=data?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
             setListOfRestaurants(data);
-            console.log(data);
+            setAllRestaurants(data);
           } catch (error) {
             console.error("Error fetching data:", error);
           }
@@ -27,25 +29,27 @@ const Body=()=>{
       
 
     
-      if(listOfRestraunt.length==0)
-      {
-        return <Shimmer/>
-      }
-    return <>            
+     
+      return listOfRestraunt.length==0?  <Shimmer/>: <>            
                 <div className="body" >
-                <div className="search restraunt" onChange={(e)=>
+                <div className="search " >
+                   <input type="text" placeholder="search"   onChange={(e)=>
                     {
-                    
-                    setSearchText("e.target.value");
-                    const filteredRestraunts=listOfRestraunt.filter((restraunt)=>restraunt.info.name.toLowerCase().includes(e.target.value.toLowerCase()))
-                    
-                    setListOfRestaurants(filteredRestraunts);
+                    setSearchText(e.target.value);
                     }
-                }> <input type="text" placeholder="search" /></div>
+                }/>
+                <button className="searchButton" onClick={()=>{
+                  
+                  const filteredRestraunts=allRestaurants.filter((restraunt)=>restraunt.info.name.toLowerCase().includes(searchText.toLowerCase()));
+                    
+                  setListOfRestaurants(filteredRestraunts);
+                  
+                }}>Search</button>
+                </div>
                 
                 <button onClick={
                     ()=>{
-                        const filteredRestraunts=listOfRestraunt.filter((restraunt)=>restraunt.info.avgRatingString>="4.4");
+                        const filteredRestraunts=allRestaurants.filter((restraunt)=>restraunt.info.avgRatingString>=4.0);
                         setListOfRestaurants(filteredRestraunts);
                     }
                     } className="filterButton">
