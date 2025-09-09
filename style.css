@@ -325,3 +325,71 @@
   .navLinks > li > a:hover {
     color: #fc8019; 
   }
+
+
+  /* menu */
+
+  .menu-card-full {
+    width: 100%;                       /* full width */
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    border-bottom: 1px solid #eee;      /* divider line like Swiggy */
+    padding: 16px;
+    box-sizing: border-box;
+    transition: background 0.2s ease;
+    border-bottom: #777 solid 1px;
+  }
+  
+  .menu-card-full:hover {
+    background: #fafafa;
+  }
+  
+  /* Left side details */
+  .menu-details {
+    flex: 1;
+    padding-right: 12px;
+  }
+  
+  .menu-title {
+    font-size: 23px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 6px;
+  }
+  
+  .menu-category {
+    font-size: 18px;
+    font-weight: 500;
+    color: #ff6f00;
+    margin-bottom: 6px;
+  }
+  
+  .menu-desc {
+    font-size: 17px;
+    color: #666;
+    margin-bottom: 8px;
+    /* max-width: 600px; */
+    overflow: hidden;
+  }
+  
+  .menu-price {
+    font-size: 16px;
+    font-weight: bold;
+    color: #e74c3c;
+  }
+  
+  /* Right side image */
+  .menu-img-container {
+    flex-shrink: 0;
+  }
+  
+  .menu-img {
+    width: 180px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  

@@ -1,6 +1,7 @@
 import Card from "./Card"
 import { useState,useEffect } from "react"
 import Shimmer from "./Shimmer";
+import {Link} from "react-router"
 
 const Body=()=>{
     
@@ -10,28 +11,37 @@ const Body=()=>{
     
 
     useEffect(() => {
+      
+      
         const fetchData = async () => {
           try {
             
             let response = await fetch(
-              "https://www.swiggy.com/dapi/restaurants/list/v5?lat=21.99740&lng=79.00110&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+              "https://www.swiggy.com/mapi/restaurants/list/v5?offset=0&is-seo-homepage-enabled=true&lat=30.2685607&lng=78.00710389999999&carousel=true&third_party_vendor=1",
+              
             );
+            console.log("->",response)
             let data = await response.json();
-            data=data?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
+            
+            // console.log(data.data.cards[1].card.card.gridElements.infoWithStyle.restaurants)
+            data=data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants||[];
+            
             setListOfRestaurants(data);
             setAllRestaurants(data);
+            
           } catch (error) {
-            console.error("Error fetching data:", error);
+            console.log("Error fetching data:", error);
           }
         };
       
         fetchData();
-      }, []); // empty dependency → runs only once on mount
+      },[]); 
       
 
     
-     
-      return listOfRestraunt.length==0?  <Shimmer/>: <>            
+     if(!listOfRestraunt||listOfRestraunt.length==0)
+     return <Shimmer/>;
+      return  <>            
                 <div className="body" >
                 <div className="search " >
                    <input type="text" placeholder="search"   onChange={(e)=>
@@ -59,7 +69,7 @@ const Body=()=>{
                 <div className="restrauntContainer">
                 {listOfRestraunt.map((res)=>{
                     // console.log(res.info)
-                return < Card info={res.info} key={res.info.id} />
+                return <Link to={"restraunt/"+res.info.id} key={res.info.id} >< Card info={res.info} /></Link>
                 })}
                   
                  
