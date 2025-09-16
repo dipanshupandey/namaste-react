@@ -3,6 +3,9 @@ import { useState,useEffect } from "react"
 import Shimmer from "./Shimmer";
 import {Link} from "react-router"
 
+// const logo = new URL('../../assets/logo.jpeg', import.meta.url);
+
+
 const Body=()=>{
     
     const [listOfRestraunt,setListOfRestaurants]=useState([]);
@@ -43,6 +46,7 @@ const Body=()=>{
      return <Shimmer/>;
       return  <>            
                 <div className="body" >
+                  {/* <img src={logo} alt="" /> */}
                 <div className="search " >
                    <input type="text" placeholder="search"   onChange={(e)=>
                     {
@@ -69,7 +73,7 @@ const Body=()=>{
                 <div className="restrauntContainer">
                 {listOfRestraunt.map((res)=>{
                     // console.log(res.info)
-                return <Link to={"restraunt/"+res.info.id} key={res.info.id} >< Card info={res.info} /></Link>
+                return <Link to={"restraunt/"+res.info.id} key={res.info.id} className="linkRestro">< Card info={res.info} /></Link>
                 })}
                   
                  
