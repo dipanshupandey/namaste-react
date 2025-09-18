@@ -2,6 +2,7 @@ import Card from "./Card"
 import { useState,useEffect } from "react"
 import Shimmer from "./Shimmer";
 import {Link} from "react-router"
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 // const logo = new URL('../../assets/logo.jpeg', import.meta.url);
 
@@ -41,8 +42,9 @@ const Body=()=>{
       },[]); 
       
 
-    
-     if(!listOfRestraunt||listOfRestraunt.length==0)
+      const online=useOnlineStatus();
+     if(online==false) return <h2 style={{ textAlign: "center", marginTop: "2rem" }}>⚠️ Oops! You are offline.</h2>;
+     else if(!listOfRestraunt||listOfRestraunt.length==0)
      return <Shimmer/>;
       return  <>            
                 <div className="body" >
