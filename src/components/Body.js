@@ -47,7 +47,7 @@ const Body=()=>{
      else if(!listOfRestraunt||listOfRestraunt.length==0)
      return <Shimmer/>;
       return  <>            
-                <div className="body" >
+                <div className="body dark:bg-black dark:text-white" >
                   {/* <img src={logo} alt="" /> */}
                 <div className="search " >
                    <input type="text" placeholder="search"   onChange={(e)=>

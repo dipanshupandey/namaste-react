@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
 /* Reset */
 * {
     padding: 0;
@@ -14,7 +15,7 @@
     align-items: center;
     padding: 12px 30px;
     border-bottom: 1px solid #e2e2e2;
-    background: white;
+    
     position: sticky;
     top: 0;
     z-index: 100;
@@ -22,6 +23,7 @@
   
   .logoIcon {
     height: 70px;
+    width: 75px;
     cursor: pointer;
   }
   
@@ -36,11 +38,13 @@
     cursor: pointer;
     transition: color 0.3s ease;
     font-weight: 500;
+    
   }
-  
+
   .navLinks > li:hover {
     color: #fc8019; /* Swiggy orange */
   }
+  
   
   /* Card Container */
   .card {
@@ -48,7 +52,7 @@
     max-width: 280px;
     border-radius: 12px;
     overflow: hidden;
-    background: white;
+    /* background: white; */
     border: 1px solid #f0f0f0;
     padding: 0;
     margin: 15px;
@@ -86,7 +90,7 @@
   .info h4 {
     font-size: 18px;
     font-weight: 600;
-    color: #333;
+    /* color: #333; */
   }
   
   .rating-time {
@@ -94,12 +98,12 @@
     gap: 12px;
     font-size: 14px;
     font-weight: 500;
-    color: #555;
+    /* color: #555; */
   }
   
   .rating-time span:first-child {
     background: #48c479;
-    color: white;
+    /* color: white; */
     padding: 2px 6px;
     border-radius: 6px;
     font-size: 13px;
@@ -107,18 +111,18 @@
   
   .info h5 {
     font-size: 14px;
-    color: #777;
+    
     font-weight: 400;
   }
   
   .info h3 {
     font-size: 15px;
-    color: #555;
+    
   }
   
   .info h4:last-child {
     font-size: 14px;
-    color: #222;
+   
     font-weight: 500;
   }
   
