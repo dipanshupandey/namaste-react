@@ -3,12 +3,12 @@ import { useState,useEffect } from "react"
 import Shimmer from "./Shimmer";
 import {Link} from "react-router"
 import useOnlineStatus from "../utils/useOnlineStatus";
-
+import Sale from "./Sale";
 // const logo = new URL('../../assets/logo.jpeg', import.meta.url);
 
 
 const Body=()=>{
-    
+    const CardWithSale=Sale(Card);
     const [listOfRestraunt,setListOfRestaurants]=useState([]);
     const [searchText,setSearchText]=useState("");
     const [allRestaurants, setAllRestaurants] = useState([]);//master list so the data doest gets lost
@@ -29,7 +29,7 @@ const Body=()=>{
             
             // console.log(data.data.cards[1].card.card.gridElements.infoWithStyle.restaurants)
             data=data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants||[];
-            
+            console.log(data[2].info.aggregatedDiscountInfoV3 );
             setListOfRestaurants(data);
             setAllRestaurants(data);
             
@@ -75,7 +75,10 @@ const Body=()=>{
                 <div className="restrauntContainer">
                 {listOfRestraunt.map((res)=>{
                     // console.log(res.info)
-                return <Link to={"restraunt/"+res.info.id} key={res.info.id} className="linkRestro">< Card info={res.info} /></Link>
+                if(res.info.aggregatedDiscountInfoV3)
+                return <Link to={"restraunt/"+res.info.id} key={res.info.id} className="linkRestro"><CardWithSale info={res.info} /></Link>
+                else
+                return <Link to={"restraunt/"+res.info.id} key={res.info.id} className="linkRestro"><Card info={res.info} /></Link>
                 })}
                   
                  

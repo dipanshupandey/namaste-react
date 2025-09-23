@@ -19,7 +19,7 @@ const Card=({info})=>{
             </div>
             
             <div className="info">
-                <h4 className="text-[#333] dark:text-amber-50">{name}</h4>
+                <h4 className="text-[#333] dark:text-amber-50 overflow-hidden h-7">{name}</h4>
                 
                 <div className="rating-time text-[#555] ">
                     <span className="text-white">{avgRatingString} <i className="fa-solid fa-star"></i></span>
