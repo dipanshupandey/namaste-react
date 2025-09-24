@@ -12,17 +12,18 @@ const useRestrauntData=(resId)=>{
         
         const data=await res.json();
         console.log(data.data.cards);
-        const newData=data.data.cards[5].groupedCard.cardGroupMap.REGULAR.cards;
-        for(let i=0;i<newData.length;i++)
-        {
-            // console.log("->",newData[i].card.card.itemCards,"<-");
-            if(newData[i].card.card.itemCards)
-            {
+        // const newData=data.data.cards[5].groupedCard.cardGroupMap.REGULAR.cards;
+        // for(let i=0;i<newData.length;i++)
+        // {
+        //     // console.log("->",newData[i].card.card.itemCards,"<-");
+        //     if(newData[i].card.card.itemCards)
+        //     {
                 
-                setresInfo(newData[i].card.card.itemCards);
-                break;
-            }
-        }
+        //         setresInfo(newData[i].card.card.itemCards);
+        //         break;
+        //     }
+        // }
+        setresInfo(data.data.cards);
        
         
     };
