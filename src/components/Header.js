@@ -1,7 +1,11 @@
 import { LOGO_URL } from "../utils/constants";
 import { useState } from "react";
 import { Link } from "react-router";
+import UserContext from "../utils/UserContext";
+import { useContext } from "react";
 const Header=()=>{
+    const {name}=useContext(UserContext);
+    // console.log(name);
     const [loginVal,setloginVal]=useState("login");
     const [dark,setdark]=useState("☀️ light");
     return <div className="nav bg-white dark:bg-black border-b-amber-50 ">
@@ -15,8 +19,9 @@ const Header=()=>{
                 <li ><Link  to="/"> HOME </Link></li>
                 <li ><Link  to="/about"> ABOUT US</Link> </li>
                 <li ><Link  to="/contact"> CONTACT </Link></li>
-                <li ><Link  to="/groceries"> GROCERIES </Link></li>
+                <li ><Link  to="/login"> LOGIN </Link></li>
                 <li ><Link  to="/cart"> CART </Link></li>
+                <li>{name}</li>
                 <button className="loginButton"
                 onClick={()=>{
                     loginVal=="login"?setloginVal("logout"):setloginVal("login")
@@ -37,6 +42,7 @@ const Header=()=>{
                     }
                 }}
                 >{dark}</button>
+
             </ul>
             </div>
     </div>

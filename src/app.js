@@ -8,16 +8,21 @@ import Contact from "./components/Contact";
 import Error from "./components/Error";
 import Cart from "./components/Cart";
 import Restraunt from "./components/Restraunt";
-// import Groceries from "./components/Groceries";
+import UserContext from "./utils/UserContext";
+import { useState } from "react";
+// import Login from "./components/Login";
 
-const Groceries= lazy(()=>import("./components/Groceries"));
+const Login= lazy(()=>import("./components/Login"));
 
 const App=()=>{
+    const [name,setName]=useState("default");
     return (
+        <UserContext value={{name,setName}}>
         <div className="app">
             <Header/>
             <Outlet/>
         </div>
+          </UserContext>
     )
 }
 
@@ -44,10 +49,10 @@ const router=createBrowserRouter([
                 element:<Cart/>
             },
             {
-                path:"/groceries",
+                path:"/login",
                 element:
                 <Suspense fallback={<h1>LAZY LOADING</h1>}>
-                <Groceries/>
+                <Login/>
                 </Suspense>
             },
             {
