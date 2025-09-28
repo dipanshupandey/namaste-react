@@ -3,7 +3,12 @@ import { useState } from "react";
 import { Link } from "react-router";
 import UserContext from "../utils/UserContext";
 import { useContext } from "react";
+import { useSelector, useDispatch } from 'react-redux'
+import { addCart,removeCart,clearCart } from "../utils/cartSlice";
+import cartSlice from "../utils/cartSlice";
 const Header=()=>{
+    const cartItems=useSelector((state)=>state.cart.items);
+    const dispatch=useDispatch();
     const {name}=useContext(UserContext);
     // console.log(name);
     const [loginVal,setloginVal]=useState("login");
@@ -20,7 +25,10 @@ const Header=()=>{
                 <li ><Link  to="/about"> ABOUT US</Link> </li>
                 <li ><Link  to="/contact"> CONTACT </Link></li>
                 <li ><Link  to="/login"> LOGIN </Link></li>
-                <li ><Link  to="/cart"> CART </Link></li>
+                <button onClick={()=>{
+                    dispatch(addCart());
+                }}>+</button>
+                <li ><Link  to="/cart" > CART - ({cartItems}) </Link></li>
                 <li>{name}</li>
                 <button className="loginButton"
                 onClick={()=>{

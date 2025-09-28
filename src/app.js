@@ -10,6 +10,9 @@ import Cart from "./components/Cart";
 import Restraunt from "./components/Restraunt";
 import UserContext from "./utils/UserContext";
 import { useState } from "react";
+
+import { Provider } from "react-redux";
+import store from "./utils/store";
 // import Login from "./components/Login";
 
 const Login= lazy(()=>import("./components/Login"));
@@ -17,12 +20,14 @@ const Login= lazy(()=>import("./components/Login"));
 const App=()=>{
     const [name,setName]=useState("default");
     return (
+        <Provider store={store}>
         <UserContext value={{name,setName}}>
         <div className="app">
             <Header/>
             <Outlet/>
         </div>
           </UserContext>
+        </Provider>
     )
 }
 
